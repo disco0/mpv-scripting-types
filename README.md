@@ -1,2 +1,4 @@
 # mpv-scripting-types
-Type Definitions for mpv scripting
+Type definitions for mpv scripting
+
+eventually
