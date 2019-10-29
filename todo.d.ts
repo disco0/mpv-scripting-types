@@ -1,5 +1,5 @@
 
-//@TODO: Move somewhere
+//@FIXME Purgatory
     // Additional utilities
     function last_error(): string;
     // If used after an API call which updates last error, returns an empty string if the API call succeeded, or a non-empty error reason string otherwise.

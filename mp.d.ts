@@ -79,7 +79,7 @@ declare namespace mp {
     function get_time(): number;
 
     // @Notes add_(forced_)key_binding
-    // Including until type definition is better fully understood
+    // Including until type definition is better understood
       /*
           Register callback to be run on a key binding. The binding will be
         mapped to the given key, which is a string describing the physical
@@ -159,7 +159,8 @@ declare namespace mp {
         // TODO: Add these into Enum if correct place
         // // The event has the reason field, which takes one of these values:
         //     eof = "eof",
-        //     // The file has ended. This can (but doesn't have to) include incomplete files or broken network connections under circumstances.
+        //     // The file has ended. This can (but doesn't have to) include incomplete
+        //     //files or broken network connections under circumstances.
         //     stop = "stop",
         //     // Playback was ended by a command.
         //     quit = "quit",
@@ -169,24 +170,29 @@ declare namespace mp {
         //     redirect = "redirect",
         //     // Happens with playlists and similar. Details see MPV_END_FILE_REASON_REDIRECT in the C API.
         //     unknown = "unknown",
-        //     // Unknown. Normally doesn't happen, unless the Lua API is out of sync with the C API. (Likewise, it could happen that your script gets reason strings that did not exist yet at the time your script was written.)
+        //     // Unknown. Normally doesn't happen, unless the Lua API is out of sync
+        //     // with the C API. (Likewise, it could happen that your script gets reason
+        //     // strings that did not exist yet at the time your script was written.)
 
         // Happens after a file was loaded and begins playback.
         FileLoaded = "file-loaded",
 
         // Happens on seeking. (This might include cases when the player seeks
-        // internally, even without user interaction. This includes e.g. segment changes when playing ordered chapters Matroska files.)
+        // internally, even without user interaction. This includes e.g. segment
+        // changes when playing ordered chapters Matroska files.)
         Seek = "seek",
 
         // Start of playback after seek or after file was loaded.
         PlaybackRestart = "playback-restart",
 
         // Idle mode is entered. This happens when playback ended, and the player
-        // was started with --idle or --force-window. This mode is implicitly ended when the start-file or shutdown events happen.
+        // was started with --idle or --force-window. This mode is implicitly
+        // ended when the start-file or shutdown events happen.
         Idle = "idle",
 
         // Called after a video frame was displayed. This is a hack, and you should
-        // avoid using it. Use timers instead and maybe watch pausing/unpausing events to avoid wasting CPU when the player is paused.
+        // avoid using it. Use timers instead and maybe watch pausing/unpausing
+        // events to avoid wasting CPU when the player is paused.
         Tick = "tick",
 
         // Sent when the player quits, and the script should terminate. Normally
@@ -348,7 +354,9 @@ declare namespace mp {
         // Note: read_file and write_file throw on errors, allow text content only.
         function write_file(fname: Path, str: string);
 
-        // Compiles the JS code content_str as file name fname (without loading anything from the filesystem), and returns it as a function. Very similar to a Function constructor, but shows at stack traces as fname.
+        // Compiles the JS code content_str as file name fname (without loading
+        // anything from the filesystem), and returns it as a function. Very
+        // similar to a Function constructor, but shows at stack traces as fname.
         function compile_js(fname, content_str);
     }
 
